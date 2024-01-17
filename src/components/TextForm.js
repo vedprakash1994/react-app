@@ -25,20 +25,27 @@ export default function TextForm() {
         setText(event.target.value)
     }
 
+    const handleCopyText = () => {
+        let textToCopy = document.getElementById("text_analyze");
+        navigator.clipboard.writeText(textToCopy.value)
+    }
+
     const clearText = () => {
-        setText('');
-    } 
+        let newText = '';
+        setText(newText);
+    }
 
     return (
         <>
             <div className='container'>
                 <div className="mb-3">
                     <h3>Enter the text to analyze</h3>
-                    <textarea className="form-control" value={text} onChange={handleOnChange} id="enter the text to analyze" rows="8"></textarea>
+                    <textarea className="form-control" value={text} onChange={handleOnChange} id="text_analyze" rows="8"></textarea>
                 </div>
                 <button className="btn btn-primary mx-2" onClick={handleUpClick}>Convert to Uppercase</button>
                 <button className="btn btn-primary mx-2" onClick={handleLoClick}>Convert to Uppercase</button>
-                <button className="btn btn-secondary mx-2" onClick={clearText}>Clear</button>
+                <button className="btn btn-primary mx-2" onClick={handleCopyText}>Copy Text</button>
+                <button className="btn btn-secondary mx-2 my-2" onClick={clearText}>Clear Text</button>
             </div>
             <div className="container my-4">
                 <h2>Your Word Summery</h2>
