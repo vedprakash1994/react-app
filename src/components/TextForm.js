@@ -42,8 +42,7 @@ export default function TextForm() {
             </div>
             <div className="container my-4">
                 <h2>Your Word Summery</h2>
-                {/* { console.log(text) } */}
-                <p> {text !== undefined ? text.split(" ").length + " words " + text.length + " charaters"  : 0 + " words " + 0 + " charaters" }</p>
+                <p> {text !== undefined  ? text.split(" ").length + " words " + text.length + " charaters"  : 0 + " words " + 0 + " charaters" }</p>
             </div>
         </>
     )
